@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mobile_navigation.xml"
+    app:startDestination="@id/homeFragment">
+
+    <fragment
+        android:id="@+id/createFragment"
+        android:name="com.cindi.storyou.create.CreateFragment"
+        android:label="create_fragment"
+        tools:layout="@layout/create_fragment" />
+    <fragment
+        android:id="@+id/profileFragment"
+        android:name="com.cindi.storyou.profile.ProfileFragment"
+        android:label="profile_fragment"
+        tools:layout="@layout/profile_fragment" />
+    <fragment
+        android:id="@+id/homeFragment"
+        android:name="com.cindi.storyou.home.HomeFragment"
+        android:label="home_fragment" />
+    <fragment
+        android:id="@+id/favoriteFragment"
+        android:name="com.cindi.storyou.favorite.FavoriteFragment"
+        android:label="favorite_fragment"
+        tools:layout="@layout/favorite_fragment" />
+</navigation>
