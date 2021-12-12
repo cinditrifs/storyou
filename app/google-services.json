@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "517170965623",
+    "project_id": "storyou-application",
+    "storage_bucket": "storyou-application.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:517170965623:android:1cea15cd74d1ae87c92a72",
+        "android_client_info": {
+          "package_name": "com.cindi.storyou"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "517170965623-st0u2v5so84sjit64i33in73sv3rejvr.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.cindi.storyou",
+            "certificate_hash": "31d18740e3db0d1b500947e51b371ff40dbd6cf7"
+          }
+        },
+        {
+          "client_id": "517170965623-m7sth8fq7g60l6l7upop1tk8roqhe3gj.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDgR8xw29a7kQYnrNcbMYPesBNMk-LvISE"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "517170965623-m7sth8fq7g60l6l7upop1tk8roqhe3gj.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
