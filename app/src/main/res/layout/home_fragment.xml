@@ -1,13 +1,118 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".HomeFragment">
+    android:orientation="vertical"
+    tools:context="home.HomeFragment" >
 
-    <TextView
+    <ScrollView
+        android:id="@+id/scrollView3"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:text="Hello" />
+        android:overScrollMode="ifContentScrolls"
+        android:scrollbarAlwaysDrawHorizontalTrack="true"
+        android:scrollbarAlwaysDrawVerticalTrack="true"
+        android:verticalScrollbarPosition="defaultPosition"
+        >
 
-</FrameLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:paddingLeft="24dp"
+            android:paddingTop="24dp"
+            android:paddingRight="24dp"
+            android:paddingBottom="24dp">
+
+            <EditText
+                android:id="@+id/input_search"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:fontFamily="@font/poppins_medium"
+                android:hint="Search"
+                android:inputType="textPersonName"
+                android:textColor="#9A9A9A"
+                android:textSize="16dp" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/textView7"
+                    android:layout_width="100dp"
+                    android:layout_height="24dp"
+                    android:layout_gravity="center"
+                    android:layout_marginRight="12dp"
+                    android:background="@drawable/rounded_corner"
+                    android:fontFamily="@font/poppins"
+                    android:gravity="center"
+                    android:text="recomended"
+                    android:textAlignment="center"
+                    android:textSize="12sp" />
+
+                <TextView
+                    android:id="@+id/textView8"
+                    android:layout_width="100dp"
+                    android:layout_height="24dp"
+                    android:layout_gravity="center"
+                    android:layout_marginRight="12dp"
+                    android:background="@drawable/rounded_corner2"
+                    android:fontFamily="@font/poppins"
+                    android:gravity="center"
+                    android:text="education"
+                    android:textAlignment="center"
+                    android:textSize="12sp" />
+
+                <TextView
+                    android:id="@+id/textView17"
+                    android:layout_width="100dp"
+                    android:layout_height="24dp"
+                    android:layout_gravity="center"
+                    android:layout_marginRight="12dp"
+                    android:background="@drawable/rounded_corner3"
+                    android:fontFamily="@font/poppins"
+                    android:gravity="center"
+                    android:text="popular"
+                    android:textAlignment="center"
+                    android:textSize="12sp" />
+
+                <TextView
+                    android:id="@+id/textView18"
+                    android:layout_width="100dp"
+                    android:layout_height="24dp"
+                    android:layout_gravity="center"
+                    android:layout_marginRight="12dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/rounded_corner4"
+                    android:fontFamily="@font/poppins"
+                    android:gravity="center"
+                    android:text="teenleet"
+                    android:textAlignment="center"
+                    android:textSize="12sp" />
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/textView19"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:layout_marginBottom="8dp"
+                android:fontFamily="@font/poppins_bold"
+                android:text="Top pick for you"
+                android:textColor="@color/black"
+                android:textSize="18sp" />
+
+            <ListView
+                android:id="@+id/buku"
+                android:layout_width="match_parent"
+                android:layout_height="500dp"
+                tools:listitem="@layout/item_card" />
+        </LinearLayout>
+    </ScrollView>
+
+
+</LinearLayout>
