@@ -61,7 +61,7 @@ class ProfileFragment : Fragment() {
                     if (dataSnapshot!!.exists() )
                     for (e in dataSnapshot.children ){
                         val post = e.getValue(KontenModel::class.java)
-                       projectData.add(post!!)
+                       projectData.add(0, post!!)
                     }
                     adapter = itemAdapter(projectData, context)
                     myProject.adapter = adapter

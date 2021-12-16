@@ -109,7 +109,7 @@
             <ListView
                 android:id="@+id/buku"
                 android:layout_width="match_parent"
-                android:layout_height="1000dp"
+                android:layout_height="10000dp"
                 tools:listitem="@layout/item_card" />
 
 

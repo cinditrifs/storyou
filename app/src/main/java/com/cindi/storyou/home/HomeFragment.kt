@@ -41,14 +41,17 @@ class HomeFragment : Fragment() {
         val view = inflater.inflate(R.layout.home_fragment, container, false)
         list_konten = view.buku
         list_konten.isClickable=true
-        ref = FirebaseDatabase.getInstance("https://storyou-application-default-rtdb.asia-southeast1.firebasedatabase.app").getReference("konten")
+        val url = "https://storyou-application-default-rtdb.asia-southeast1.firebasedatabase.app"
+        ref  = FirebaseDatabase.getInstance(url).getReference()
+        val query = ref.child("konten")
+
         kontenList = mutableListOf<KontenModel>()
-        ref.addValueEventListener(object : ValueEventListener {
+        query.addValueEventListener(object : ValueEventListener {
             override fun onDataChange(dataSnapshot: DataSnapshot) {
                 if (dataSnapshot!!.exists()){
                     for (e in dataSnapshot.children){
                         val post = e.getValue(KontenModel::class.java)                    // ...
-                        kontenList.add(post!!)
+                        kontenList.add(0, post!!)
                     }
                     adapter = itemAdapter(kontenList, context)
                     list_konten.adapter = adapter
