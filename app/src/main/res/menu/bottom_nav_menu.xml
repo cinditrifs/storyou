@@ -10,14 +10,14 @@
     <item
         android:id="@+id/favoriteFragment"
         android:icon="@drawable/fav_white"
-        android:title="My Fav" />
+        android:title="Suka" />
     <item
         android:id="@+id/createFragment"
         android:icon="@drawable/create_white"
-        android:title="Create" />
+        android:title="Buat" />
     <item
         android:id="@+id/profileFragment"
         android:icon="@drawable/profile_white"
-        android:title="Profile" />
+        android:title="Profil" />
 
 </menu>

@@ -1,5 +1,6 @@
 package com.cindi.storyou.create
 
+import android.content.Intent
 import androidx.lifecycle.ViewModelProvider
 import android.os.Bundle
 import androidx.fragment.app.Fragment
@@ -10,8 +11,10 @@ import android.widget.Button
 import android.widget.EditText
 import android.widget.TextView
 import android.widget.Toast
+import com.cindi.storyou.MainActivity
 import com.cindi.storyou.R
 import com.cindi.storyou.data.KontenModel
+import com.cindi.storyou.home.HomeFragment
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.database.FirebaseDatabase
 import com.google.firebase.ktx.Firebase
@@ -49,7 +52,10 @@ class CreateFragment : Fragment() {
 
         createBtn.setOnClickListener {
             CreateData()
+            val intent = Intent(activity, HomeFragment::class.java)
+            startActivity(intent)
         }
+
         return view
     }
 
@@ -68,23 +74,20 @@ class CreateFragment : Fragment() {
             inputKonten.error = "Isi Konten"
             return
         }
+        Toast.makeText(activity, "Cerita berhasil dibuat", Toast.LENGTH_SHORT).show()
 
         val ref = FirebaseDatabase.getInstance("https://storyou-application-default-rtdb.asia-southeast1.firebasedatabase.app").getReference("konten")
         val kontenId = ref.push().key
         val storyou = KontenModel(kontenId, sampul, judul, pengarang, konten)
         if (kontenId != null) {
             ref.child(kontenId).setValue(storyou)
-
         }
-
-
     }
 
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
         viewModel = ViewModelProvider(this).get(CreateViewModel::class.java)
         // TODO: Use the ViewModel
-
     }
 
 }

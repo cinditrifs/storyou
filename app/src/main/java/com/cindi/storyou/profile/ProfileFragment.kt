@@ -1,23 +1,21 @@
 package com.cindi.storyou.profile
 
-import androidx.lifecycle.ViewModelProvider
+import android.content.Intent
 import android.os.Bundle
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ListView
+import androidx.fragment.app.Fragment
+import androidx.lifecycle.ViewModelProvider
+import com.cindi.storyou.*
 import com.cindi.storyou.R
-import com.cindi.storyou.databinding.ProfileFragmentBinding
-import com.google.firebase.auth.FirebaseAuth
-import com.cindi.storyou.R.layout.profile_fragment
 import com.cindi.storyou.data.KontenModel
-import com.cindi.storyou.home.HomeViewModel
 import com.cindi.storyou.home.itemAdapter
+import com.cindi.storyou.ui.login.LoginActivity
+import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.database.*
-import kotlinx.android.synthetic.main.home_fragment.view.*
 import kotlinx.android.synthetic.main.profile_fragment.view.*
-import kotlinx.android.synthetic.main.profile_fragment.view.buku
 
 
 class ProfileFragment : Fragment() {
@@ -42,30 +40,43 @@ class ProfileFragment : Fragment() {
     ): View? {
         val view = inflater.inflate(R.layout.profile_fragment, container, false)
 
-        view.signout.setOnClickListener { firebaseAuth.signOut() }
+        view.signout.setOnClickListener {
+            firebaseAuth.signOut()
+            val intent = Intent(activity, intro::class.java)
+            startActivity(intent)}
 
         firebaseAuth = FirebaseAuth.getInstance()
         val firebaseUser = firebaseAuth.currentUser
-        val email = firebaseUser!!.email
+        val email = firebaseUser!!.email.toString()
 
         view.email.text = email
-//        view.countbook.text = projectData.size.toString()
 
 
         myProject = view.buku
-        ref = FirebaseDatabase.getInstance("https://storyou-application-default-rtdb.asia-southeast1.firebasedatabase.app").getReference("konten")
+        ref = FirebaseDatabase.getInstance("https://storyou-application-default-rtdb.asia-southeast1.firebasedatabase.app").getReference()
+        val query = ref.child("konten").orderByChild("pengarang").equalTo("$email");
         projectData = mutableListOf<KontenModel>()
-        ref.addValueEventListener(object : ValueEventListener {
+        query.addValueEventListener(object : ValueEventListener {
             override fun onDataChange(dataSnapshot: DataSnapshot) {
-
-                if (dataSnapshot!!.exists()  )//&& dataSnapshot.child("konten").hasChild("pengarang") == firebaseUser!!.email.toString(){
+                    if (dataSnapshot!!.exists() )
                     for (e in dataSnapshot.children ){
-                        val post = e.getValue(KontenModel::class.java)                    // ...
+                        val post = e.getValue(KontenModel::class.java)
                        projectData.add(post!!)
                     }
                     adapter = itemAdapter(projectData, context)
                     myProject.adapter = adapter
-                }
+                    myProject.setOnItemClickListener { parent, view, position, id ->
+                    val intent = Intent(activity, DetailAutherActivity::class.java)
+                    val konten = projectData.get(position)
+                    intent.putExtra("data1", konten.sampul);
+                    intent.putExtra("data2", konten.judul);
+                    intent.putExtra("data3", konten.konten);
+                    intent.putExtra("data4", konten.pengarang);
+                    startActivity(intent)}
+
+                view.countbook.text = projectData.size.toString()
+
+            }
 
 
             override fun onCancelled(error: DatabaseError) {
@@ -74,9 +85,20 @@ class ProfileFragment : Fragment() {
             // Get Post object and use the values to update the UI
 
         })
-
+        //checkUser()
         return view
     }
+
+//    private fun checkUser() {
+//        //if not already login go to intro
+//        val firebaseUser = firebaseAuth.currentUser
+//        if (firebaseUser == null){
+//            //user login
+//            val intent = Intent(activity, LoginActivity::class.java)
+//            startActivity(intent)
+//        }
+//
+//    }
 
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)

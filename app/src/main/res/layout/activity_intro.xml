@@ -67,25 +67,25 @@
         app:layout_constraintTop_toBottomOf="@+id/textView"
         app:layout_constraintVertical_bias="0.0" />
 
-    <Button
-        android:id="@+id/asguess"
-        android:layout_width="327dp"
-        android:layout_height="40dp"
-        android:layout_marginTop="8dp"
+<!--    <Button-->
+<!--        android:id="@+id/asguess"-->
+<!--        android:layout_width="327dp"-->
+<!--        android:layout_height="40dp"-->
+<!--        android:layout_marginTop="8dp"-->
 
-        android:background="@drawable/button_style"
-        android:fontFamily="@font/poppins_medium"
-        android:gravity="center"
-        android:text="Continue as Guess"
-        android:textAlignment="center"
-        android:textColor="@color/white"
-        android:textSize="16dp"
-        app:backgroundTint="#23001C"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/startbtn"
-        app:layout_constraintVertical_bias="0.034" />
+<!--        android:background="@drawable/button_style"-->
+<!--        android:fontFamily="@font/poppins_medium"-->
+<!--        android:gravity="center"-->
+<!--        android:text="Continue as Guess"-->
+<!--        android:textAlignment="center"-->
+<!--        android:textColor="@color/white"-->
+<!--        android:textSize="16dp"-->
+<!--        app:backgroundTint="#23001C"-->
+<!--        app:layout_constraintBottom_toBottomOf="parent"-->
+<!--        app:layout_constraintEnd_toEndOf="parent"-->
+<!--        app:layout_constraintStart_toStartOf="parent"-->
+<!--        app:layout_constraintTop_toBottomOf="@+id/startbtn"-->
+<!--        app:layout_constraintVertical_bias="0.034" />-->
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

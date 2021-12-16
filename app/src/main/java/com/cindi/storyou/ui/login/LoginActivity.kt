@@ -1,29 +1,17 @@
 package com.cindi.storyou.ui.login
 
-import android.app.Activity
 import android.content.Intent
-import androidx.lifecycle.Observer
-import androidx.lifecycle.ViewModelProvider
 import android.os.Bundle
-import androidx.annotation.StringRes
-import androidx.appcompat.app.AppCompatActivity
-import android.text.Editable
 import android.text.TextUtils
-import android.text.TextWatcher
 import android.util.Patterns
-import android.view.View
-import android.view.inputmethod.EditorInfo
-import android.widget.Button
-import android.widget.EditText
 import android.widget.TextView
 import android.widget.Toast
+import androidx.appcompat.app.AppCompatActivity
 import com.cindi.storyou.MainActivity
-import com.cindi.storyou.databinding.ActivityLoginBinding
-
 import com.cindi.storyou.R
 import com.cindi.storyou.SignupActivity
+import com.cindi.storyou.databinding.ActivityLoginBinding
 import com.google.firebase.auth.FirebaseAuth
-import java.util.regex.Pattern
 
 class LoginActivity : AppCompatActivity() {
 
@@ -56,6 +44,8 @@ class LoginActivity : AppCompatActivity() {
         //handle buttin
         binding.login.setOnClickListener {
             validateData()
+            val intent = Intent(this, MainActivity::class.java)
+            startActivity(intent)
         }
 
 
@@ -152,11 +142,13 @@ class LoginActivity : AppCompatActivity() {
                //get user info
                val firebaseUser = firebaseAuth.currentUser
                val email = firebaseUser!!.email
-               Toast.makeText(this, "$email", Toast.LENGTH_SHORT).show()
+               Toast.makeText(this, "Selamat datang di storyou, $email", Toast.LENGTH_SHORT).show()
            }
            .addOnFailureListener{
                e-> Toast.makeText(this, "Login Failed due to ${e.message}", Toast.LENGTH_SHORT).show()
            }
+        val intent = Intent(this, MainActivity::class.java)
+        startActivity(intent)
     }
 
 

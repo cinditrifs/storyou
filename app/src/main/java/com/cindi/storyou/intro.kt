@@ -18,10 +18,10 @@ class intro : AppCompatActivity() {
             val intent = Intent(this, LoginActivity::class.java)
             startActivity(intent)
         }
-        asguess = findViewById<Button>(R.id.asguess)
-        asguess.setOnClickListener {
-            val intent = Intent(this, MainActivity::class.java)
-            startActivity(intent)
-        }
+//        asguess = findViewById<Button>(R.id.asguess)
+//        asguess.setOnClickListener {
+//            val intent = Intent(this, MainActivity::class.java)
+//            startActivity(intent)
+//        }
     }
 }
