@@ -8,6 +8,7 @@ import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.cindi.storyou.databinding.ActivitySignupBinding
 import com.cindi.storyou.profile.ProfileFragment
+import com.cindi.storyou.ui.login.LoginActivity
 import com.google.firebase.auth.FirebaseAuth
 
 class SignupActivity : AppCompatActivity() {
@@ -29,6 +30,12 @@ class SignupActivity : AppCompatActivity() {
         //handle butt0n
         binding.signup.setOnClickListener {
             validateData()
+        }
+
+        //signin
+        binding.loginhere.setOnClickListener {
+            startActivity(Intent(this, LoginActivity::class.java))
+            finish()
         }
 
 

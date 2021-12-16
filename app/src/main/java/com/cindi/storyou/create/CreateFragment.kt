@@ -11,6 +11,8 @@ import android.widget.Button
 import android.widget.EditText
 import android.widget.TextView
 import android.widget.Toast
+import androidx.navigation.Navigation
+import androidx.navigation.fragment.findNavController
 import com.cindi.storyou.MainActivity
 import com.cindi.storyou.R
 import com.cindi.storyou.data.KontenModel
@@ -18,6 +20,7 @@ import com.cindi.storyou.home.HomeFragment
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.database.FirebaseDatabase
 import com.google.firebase.ktx.Firebase
+import kotlinx.android.synthetic.main.activity_main.*
 import kotlinx.android.synthetic.main.create_fragment.view.*
 import kotlinx.android.synthetic.main.item_card.*
 
@@ -52,8 +55,8 @@ class CreateFragment : Fragment() {
 
         createBtn.setOnClickListener {
             CreateData()
-            val intent = Intent(activity, HomeFragment::class.java)
-            startActivity(intent)
+
+            //posting fcm
         }
 
         return view
@@ -81,7 +84,13 @@ class CreateFragment : Fragment() {
         val storyou = KontenModel(kontenId, sampul, judul, pengarang, konten)
         if (kontenId != null) {
             ref.child(kontenId).setValue(storyou)
+
+            view?.let { Navigation.findNavController(it).navigate(R.id.action_createFragment_to_homeFragment) };
+            //val intent = Intent(activity, HomeFragment::class.java)
+            //startActivity(intent)
+            //posting api
         }
+
     }
 
     override fun onActivityCreated(savedInstanceState: Bundle?) {

@@ -44,8 +44,7 @@ class LoginActivity : AppCompatActivity() {
         //handle buttin
         binding.login.setOnClickListener {
             validateData()
-            val intent = Intent(this, MainActivity::class.java)
-            startActivity(intent)
+
         }
 
 
@@ -134,6 +133,8 @@ class LoginActivity : AppCompatActivity() {
         else{
             firebaseLogin()
         }
+//        val intent = Intent(this, MainActivity::class.java)
+//        startActivity(intent)
     }
 
     private fun firebaseLogin() {
@@ -143,12 +144,13 @@ class LoginActivity : AppCompatActivity() {
                val firebaseUser = firebaseAuth.currentUser
                val email = firebaseUser!!.email
                Toast.makeText(this, "Selamat datang di storyou, $email", Toast.LENGTH_SHORT).show()
+               val intent = Intent(this, MainActivity::class.java)
+               startActivity(intent)
            }
            .addOnFailureListener{
                e-> Toast.makeText(this, "Login Failed due to ${e.message}", Toast.LENGTH_SHORT).show()
            }
-        val intent = Intent(this, MainActivity::class.java)
-        startActivity(intent)
+
     }
 
 

@@ -192,7 +192,7 @@
             <ListView
                 android:id="@+id/buku"
                 android:layout_width="match_parent"
-                android:layout_height="10000dp"
+                android:layout_height="8000dp"
                 android:layout_marginLeft="16dp"
                 android:layout_marginRight="16dp"
                 android:overScrollMode="always"
