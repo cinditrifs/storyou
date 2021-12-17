@@ -4,6 +4,8 @@
     package="com.cindi.storyou">
 
     <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="com.google.android.c2dm.permission.RECEIVE" />
+
 
     <application
         android:allowBackup="true"
@@ -41,8 +43,11 @@
         </activity>
         <service
             android:name=".MyFirebaseInstanceIDService"
+            android:permission="com.google.android.c2dm.permission.SEND"
             tools:ignore="Instantiatable">
             <intent-filter>
+                <action android:name="com.google.firebase.MESSAGING.EVENT"/>
+                <action android:name="com.google.android.c2dm.permission.RECEIVE"/>
                 <action android:name="com.google.firebase.INSTANCE_ID_EVENT"/>
             </intent-filter>
         </service>

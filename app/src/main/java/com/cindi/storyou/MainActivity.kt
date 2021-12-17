@@ -5,8 +5,10 @@ import android.os.Bundle
 import androidx.navigation.NavController
 import androidx.navigation.Navigation
 import androidx.navigation.ui.setupWithNavController
+import com.cindi.storyou.create.TOPIC
 import com.google.android.material.bottomnavigation.BottomNavigationItemView
 import com.google.android.material.bottomnavigation.BottomNavigationView
+import com.google.firebase.messaging.FirebaseMessaging
 
 
 private lateinit var navController : NavController
@@ -19,6 +21,6 @@ class MainActivity : AppCompatActivity() {
         navController = Navigation.findNavController(this, R.id.nav_host_fragment_activity_main)
 
         nav_view.setupWithNavController(navController)
-
+        FirebaseMessaging.getInstance().subscribeToTopic(TOPIC)
     }
 }
