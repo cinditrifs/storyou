@@ -40,7 +40,8 @@
                 android:layout_height="wrap_content"
                 android:fontFamily="@font/poppins_medium"
                 android:text="Judul"
-                android:textSize="16dp" />
+                android:textColor="@color/black"
+                android:textSize="14dp" />
 
             <TextView
                 android:id="@+id/pengarang"
@@ -48,7 +49,8 @@
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="4dp"
                 android:fontFamily="@font/poppins_medium"
-                android:text="Karya : Cindi" />
+                android:text="Karya : Cindi"
+                android:textSize="11dp" />
 
             <TextView
                 android:id="@+id/intro"

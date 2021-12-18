@@ -65,7 +65,7 @@
                 android:text="Ayat- Ayat Cinta"
                 android:textAlignment="center"
                 android:textColor="#3E001F"
-                android:textSize="24sp" />
+                android:textSize="16sp" />
 
             <TextView
                 android:id="@+id/pengarang"
@@ -79,7 +79,7 @@
                 android:text="Habiburahman El Syrazy"
                 android:textAlignment="center"
                 android:textColor="#3E001F"
-                android:textSize="13sp" />
+                android:textSize="10sp" />
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -131,7 +131,7 @@
                 android:justificationMode="inter_word"
                 android:text="TextView"
                 android:textColor="@color/black"
-                android:textSize="16dp" />
+                android:textSize="13dp" />
         </LinearLayout>
     </ScrollView>
 

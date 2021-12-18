@@ -79,9 +79,12 @@ class CreateFragment : Fragment() {
     }
 
     private fun pushNotif() {
-       val judul = "storyou"
+        firebaseAuth = FirebaseAuth.getInstance()
+        val firebaseUser = firebaseAuth.currentUser
+        val email = firebaseUser!!.email
+        val judul = inputJudul.text.toString()
         val message = "Ada konten baru nih, buruan baca"
-        val nama = "Storyou"
+        val nama = "$email"
         val topic = "Storyou"
         var notifReq = DataRequest(message, nama, judul, topic)
         println(notifReq.nama + " ~~~")
@@ -90,7 +93,6 @@ class CreateFragment : Fragment() {
             override fun onResponse(call: Call<DataResponse2>, response: Response<DataResponse2>) {
                 val notif = response.body()
                 Log.d(TAG, notif.toString())
-
             }
             override fun onFailure(call: Call<DataResponse2>, t: Throwable) {
                 Log.e(TAG, "ini ga keambil")
@@ -98,21 +100,7 @@ class CreateFragment : Fragment() {
         })
     }
 
-
     val TAG = "CreateFragment"
-//    private fun sendNotification(notification: DataRequest) = CoroutineScope(Dispatchers.IO).launch {
-//        try{
-//            val response = Retrofit.api.pushNotification(notification)
-//            if(response.isSuccessful){
-//                Log.d(TAG, "Response: ${Gson().toJson(response)}")
-//            } else{
-//                Log.e(TAG, response.errorBody().toString() )
-//            }
-//        }
-//        catch (e:Exception){
-//            Log.e(TAG, "ini ga keambil")
-//        }
-//}
 
     private fun CreateData() {
         firebaseAuth = FirebaseAuth.getInstance()

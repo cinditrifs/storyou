@@ -59,13 +59,13 @@
                 android:layout_gravity="center"
                 android:layout_marginLeft="24dp"
                 android:layout_marginTop="8dp"
-                android:layout_marginRight="24dp"
+                android:layout_marginRight="16dp"
                 android:fontFamily="@font/poppins_bold"
                 android:gravity="center"
                 android:text="Ayat- Ayat Cinta"
                 android:textAlignment="center"
                 android:textColor="#3E001F"
-                android:textSize="24sp" />
+                android:textSize="16sp" />
 
             <TextView
                 android:id="@+id/pengarang"
@@ -79,7 +79,7 @@
                 android:text="Habiburahman El Syrazy"
                 android:textAlignment="center"
                 android:textColor="#3E001F"
-                android:textSize="13sp" />
+                android:textSize="10sp" />
 
             <LinearLayout
                 android:id="@+id/fitursoon"
@@ -137,7 +137,7 @@
                 android:justificationMode="inter_word"
                 android:text="TextView"
                 android:textColor="@color/black"
-                android:textSize="16dp" />
+                android:textSize="13dp" />
         </LinearLayout>
     </ScrollView>
 </LinearLayout>
