@@ -1,17 +1,47 @@
 package com.cindi.storyou.service
 
 import okhttp3.ResponseBody
+import retrofit2.Call
 import retrofit2.Response
 import retrofit2.http.Body
+import retrofit2.http.Headers
 import retrofit2.http.POST
 
 interface NotificationApi {
-    // @Header ("Accept"  : "application/json", "Content-Type" : "application/json")
-    @POST(value = "/send-message-topic")
-    suspend fun pushNotification(
-        @Body notification: PushNotification
-    ): Response<ResponseBody>
+    @Headers("Content-Type: application/json")
+    @POST("/send-message-topic")
+    fun pushNotification(
+        @Body req:DataRequest
+    ) :Call<DataResponse2>
 }
+    // @Header ("Accept"  : "application/json", "Content-Type" : "application/json")
+//    @POST("/send-message-topic")
+//    suspend fun pushNotification(
+//        @Body notification: Data
+//    ): Response<ResponseBody>
+//}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 //    companion object{
 //        operator fun invoke(): NotificationApi {
 //            val requestInterceptor= Interceptor{ chain ->

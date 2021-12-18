@@ -1,10 +1,10 @@
 package com.cindi.storyou
-
 import android.annotation.SuppressLint
 import android.app.NotificationChannel
 import android.app.NotificationManager
 import android.app.PendingIntent
 import android.app.PendingIntent.FLAG_ONE_SHOT
+import android.content.ContentValues.TAG
 import android.content.Context
 import android.content.Intent
 import android.graphics.Color
@@ -20,23 +20,9 @@ import com.google.firebase.messaging.FirebaseMessaging
 import com.google.firebase.messaging.FirebaseMessagingService
 import com.google.firebase.messaging.RemoteMessage
 import kotlin.random.Random
-
 const val channelId = "notification_channel"
 const val channelName = "com.cindi.storyou"
 class MyFirebaseInstanceIDService : FirebaseMessagingService (){
-
-    override fun onNewToken(p0: String) {
-        super.onNewToken(p0)
-        val refreshToken = FirebaseMessaging.getInstance().token
-        Log.e ("refresh", refreshToken.toString())
-        Log.i ("refresh", refreshToken.toString())
-
-        println("===========================================")
-        println(refreshToken.toString())
-        println("===========================================")
-
-    }
-
     override fun onMessageReceived(p0: RemoteMessage) {
         super.onMessageReceived(p0)
         val intent = Intent(this, CreateFragment::class.java)
@@ -49,20 +35,19 @@ class MyFirebaseInstanceIDService : FirebaseMessagingService (){
         intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP)
         val pendingIntent = PendingIntent.getActivity(this, 0, intent, FLAG_ONE_SHOT)
         val notification = NotificationCompat.Builder(this, channelId)
-            .setContentTitle(p0.data["tittle"])
+            .setContentTitle(p0.data["title"])
             .setContentText(p0.data["message"])
-            .setContentText(p0.data["nama"])
+//            .setContentText(p0.data["nama"])
             .setSmallIcon(R.drawable.logo)
             .setAutoCancel(true)
             .setContentIntent(pendingIntent)
             .build()
-
         notificationManager.notify(notificationId, notification)
         //showNotification(p0.notification?.title.toString(), p0.notification?.body.toString())
     }
     @RequiresApi(Build.VERSION_CODES.O)
     private fun createNotificationChannel(notificationManager: NotificationManager){
-        val channelName = "channel name"
+        val channelName = "channelName"
         val channel = NotificationChannel(channelId, channelName,NotificationManager.IMPORTANCE_HIGH).apply {
             description = "My channel description"
             enableLights(true)
@@ -70,6 +55,18 @@ class MyFirebaseInstanceIDService : FirebaseMessagingService (){
         }
         notificationManager.createNotificationChannel(channel)
     }
+
+    //    override fun onNewToken(p0: String) {
+//        super.onNewToken(p0)
+//        val refreshToken = FirebaseMessaging.getInstance().token
+//        Log.e ("refresh", refreshToken.toString())
+//        Log.i ("refresh", refreshToken.toString())
+//
+//        println("===========================================")
+//        println(refreshToken.toString())
+//        println("===========================================")
+//
+//    }
 
 //    fun showNotification (tittle:String, message: String){
 //        val builder = NotificationCompat.Builder(this, "test notif")

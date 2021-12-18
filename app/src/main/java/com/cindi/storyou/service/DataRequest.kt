@@ -1,19 +1,20 @@
 package com.cindi.storyou.service
 
+
 import com.google.gson.annotations.Expose
 import com.google.gson.annotations.SerializedName
 
-data class NotificationData(
+class DataRequest(
     @SerializedName("message")
     @Expose
-    val message: String,
+    var message : String,
     @SerializedName("nama")
     @Expose
-    val nama: String,
+    var nama: String,
     @SerializedName("title")
     @Expose
-    val title: String,
+    var title: String,
     @SerializedName("topic")
     @Expose
-    val topic: String
+    var topic: String,
 )

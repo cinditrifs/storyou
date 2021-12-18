@@ -23,6 +23,16 @@
         <meta-data
             android:name="com.google.firebase.messaging.default_notification_color"
             android:resource="@color/white" />
+        <service
+            android:name=".MyFirebaseInstanceIDService"
+            android:permission="com.google.android.c2dm.permission.SEND"
+            tools:ignore="Instantiatable">
+            <intent-filter>
+                <action android:name="com.google.firebase.MESSAGING.EVENT"/>
+                <action android:name="com.google.android.c2dm.intent.RECEIVE"/>
+                <action android:name="com.google.firebase.INSTANCE_ID_EVENT"/>
+            </intent-filter>
+        </service>
 
         <activity android:name=".DetailAutherActivity"></activity>
         <activity android:name=".DetailActivity" />
@@ -41,16 +51,7 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <service
-            android:name=".MyFirebaseInstanceIDService"
-            android:permission="com.google.android.c2dm.permission.SEND"
-            tools:ignore="Instantiatable">
-            <intent-filter>
-                <action android:name="com.google.firebase.MESSAGING.EVENT"/>
-                <action android:name="com.google.android.c2dm.permission.RECEIVE"/>
-                <action android:name="com.google.firebase.INSTANCE_ID_EVENT"/>
-            </intent-filter>
-        </service>
+
 
         <meta-data
             android:name="preloaded_fonts"
