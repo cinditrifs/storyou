@@ -59,16 +59,6 @@ class CreateFragment : Fragment() {
         inputKonten = view.inputKonten
         inputPengarang = view.pengarang
         createBtn = view.createBtn
-        Firebase.messaging.subscribeToTopic("Storyou")
-            .addOnCompleteListener { task ->
-                var msg = "Succes"
-                if (!task.isSuccessful) {
-                    msg = "not success"
-                }
-                Log.d(TAG, msg)
-                Toast.makeText(activity, msg, Toast.LENGTH_SHORT).show()
-            }
-        FirebaseMessaging.getInstance().subscribeToTopic(TOPIC)
         createBtn.setOnClickListener {
             CreateData()
             //sendNotification()

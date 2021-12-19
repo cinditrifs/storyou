@@ -19,7 +19,7 @@ android {
         applicationId "com.cindi.storyou"
         minSdkVersion 19
         targetSdkVersion 30
-        versionCode 31
+        versionCode 30
         versionName "1.0"
         multiDexEnabled true
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"

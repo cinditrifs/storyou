@@ -135,7 +135,6 @@
                 android:layout_height="wrap_content"
                 android:fontFamily="@font/poppins_bold"
                 android:gravity="center"
-                android:text="2"
                 android:textColor="@color/primary"
                 android:textSize="14sp" />
         </LinearLayout>
@@ -161,7 +160,6 @@
                 android:layout_height="wrap_content"
                 android:fontFamily="@font/poppins_bold"
                 android:gravity="center"
-                android:text="300"
                 android:textColor="@color/primary"
                 android:textSize="14sp" />
         </LinearLayout>
