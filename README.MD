@@ -7,7 +7,16 @@
 <h3 align="center"> Dibuat untuk memenuhi tugas akhir Mobile Computing </h3>
 
 <p align="center"> 
-    <img src="/asset/StoryouApp"></img>
+    <img src="/asset/StoryouApp.png"></img>
 </p>
 
-# Fitur  ✏️
+### Feature 
+- Signup 
+- Login
+- Create story
+- Reading story
+- Notification
+
+### Another Link 
+- [Privacy Polici](https://pages.flycricket.io/storyou/privacy.html)
+- [Term of Use](https://pages.flycricket.io/storyou/terms.html)
