@@ -23,21 +23,21 @@
 - Wawancara dilakukan melalui Zoom meeting pada tanggal 21 Desember 2021 jam 20.32-selesai. 
 - Alasan dipilih, karena Azizah sering nulis di media sosialnya, baik dalam bentuk post di feed di instagramnya, juga di story whatsapp dan instagram. Ditambah lagi, dia juga suka mengikuti kelas menulis di Whatsapp
 - [Link Record | User Testing 1 | Siti Azizah](https://youtu.be/hOh1MwfxKuE)
-- [Subtitle] ()
+- [Subtitle] (https://github.com/cinditrifs/storyou/blob/main/asset/%5BSubtitle%5D%20User%201%20--%20Siti%20Azizah.sbv)
 
 **User 2 | Novitasari**
 - Mahasiswa Universitas Negeri Jakarta, prodi Ilmu Komputer 2018
 - Wawancara dilakukan melalui Zoom meeting pada tanggal 24 Desember 2021 jam 23.12-selesai. 
 - Alasan dipilih, karena Novitasari adalah pengguna media bacaan online, yaitu Wattpad, dan juga suka menulis. Dibuktikan dengan adanya karya yang pernah di terbitkan
 - [Link Record | User Testing 2 | Novitasari](https://youtu.be/5k3O63vPZ74)
-- [Subtitle] ()
+- [Subtitle] (https://github.com/cinditrifs/storyou/blob/main/asset/%5BSubtitle%5D%20User%202%20--%20Novitasari.sbv)
 
 **User 3 | Rita Septi NR**
 - Mahasiswa Universitas Negeri Jakarta, prodi Statistika 2018
 - Wawancara dilakukan melalui Zoom meeting pada tanggal 22 Desember 2021 jam 21.00-selesai. 
 - Alasan dipilih, karena Rita melalui wawancaranya, adalah pengguna wattpad dan media bacaan lain. Juga dari dulu memang memiliki hobi membaca cerita-cerita. Dan sampai sekarang masih suka menulis, walaupun bukan untuk dikonsumsi oleh publik
 - [Link Record | User Testing 3 | Rita Septi NR](https://youtu.be/Gzp3A3VVP5Y)
-- [Subtitle] ()
+- [Subtitle] (https://github.com/cinditrifs/storyou/blob/main/asset/%5BSubtitle%5D%20User%203%20--%20Rita%20Septi%20NR.sbv)
 
 
 ### Another Link 
