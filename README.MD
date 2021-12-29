@@ -44,3 +44,4 @@
 - [Privacy Polici](https://pages.flycricket.io/storyou/privacy.html)
 - [Term of Use](https://pages.flycricket.io/storyou/terms.html)
 - [Playstore](https://play.google.com/store/apps/details?id=com.cindi.storyou)
+- [Server Storyou App](https://github.com/cinditrifs/server-storyou)
